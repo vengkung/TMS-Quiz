@@ -222,7 +222,35 @@ function exportToExcel(name, hospital, specialty, tmsExp, answers) {
   answers.forEach((ans, i) => {
     wsData.push([`Q${i + 1}`, ans]);
   });
+
   const ws = XLSX.utils.aoa_to_sheet(wsData);
   XLSX.utils.book_append_sheet(wb, ws, "TMS Quiz");
-  XLSX.writeFile(wb, `TMS_Quiz_${name.replace(" ", "_")}.xlsx`);
+
+  const wbout = XLSX.write(wb, { bookType: "xlsx", type: "binary" });
+
+  // ✅ แปลง binary เป็น ArrayBuffer
+  function s2ab(s) {
+    const buf = new ArrayBuffer(s.length);
+    const view = new Uint8Array(buf);
+    for (let i = 0; i < s.length; ++i) view[i] = s.charCodeAt(i) & 0xff;
+    return buf;
+  }
+
+  // ✅ ใช้ MIME type ที่ iOS รองรับ
+  const blob = new Blob([s2ab(wbout)], {
+    type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  });
+
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `TMS_Quiz_${name.replace(" ", "_")}.xlsx`;
+
+  // ✅ เพิ่ม delay ก่อน revoke URL เพื่อให้ Safari ทำงานทัน
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => {
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  }, 1500);
 }
