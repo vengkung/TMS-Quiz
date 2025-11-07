@@ -42,9 +42,9 @@ const questions = [
     question: "เพราะเหตุใดในเครื่อง TMS ต้องมีระบบ Cooling system ที่ดีทั้งในตัวเครื่อง (body) และที่หัวคอยด์?",
     choices: [
       "Patient Safety",
-      "Continue using during service",
+      "Continue using during the service period",
       "Protecting Coil overheating",
-      "Better design for user"
+      "Better design for a friendly user (light and thin)"
     ],
     correct: [0, 1, 2, 3],
     multiSelect: true
@@ -254,4 +254,5 @@ function exportToExcel(name, hospital, specialty, tmsExp, answers) {
     document.body.removeChild(a);
   }, 1500);
 }
+
 
