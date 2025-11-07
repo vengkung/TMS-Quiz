@@ -4,9 +4,9 @@ const questions = [
     choices: [
       "Major Depressive Disorder (MDD)",
       "Obsessive-Compulsive Disorder (OCD)",
-      "Substance Addiction (Smoking)",
-      "Generalized Anxiety Disorder",
-      "PTSD",
+      "Substance Addiction (for smoking cessation)",
+      "Generalized Anxiety Disorder (GAD)",
+      "Post-Traumatic Stress Disorder (PTSD)",
       "Schizophrenia (negative symptoms)",
       "Schizophrenia (auditory hallucinations)"
     ],
@@ -14,7 +14,7 @@ const questions = [
     multiSelect: false
   },
   {
-    question: "US FDA ได้อนุมัติให้ TMS สามารถใช้ในการรักษา  Major Depressive Disorder (MDD) ครั้งแรกในปีใด?",
+    question: "US FDA ได้อนุมัติให้ TMS สามารถใช้ในการรักษา  Major Depressive Disorder (MDD) <b>ครั้งแรก</b> ในปีใด?",
     choices: ["2018", "2008", "2010", "2020"],
     correct: [1]
   },
@@ -254,3 +254,4 @@ function exportToExcel(name, hospital, specialty, tmsExp, answers) {
     document.body.removeChild(a);
   }, 1500);
 }
+
