@@ -1,53 +1,55 @@
 const questions = [
   {
-    question: "ข้อบ่งใช้ใดที่ได้รับการอนุมัติจาก USFDA ให้ใช้ TMS ในกรณีที่ใช้ยารักษาแล้วไม่ได้ผล?",
+    question: "ข้อ 1 Guidelines ใดสนับสนุนการใช้ rTMS เพื่อช่วยฟื้นฟู motor recovery หลังโรคหลอดเลือดสมอง?",
     choices: [
-      "Major Depressive Disorder (MDD)",
-      "Obsessive-Compulsive Disorder (OCD)",
-      "Substance Addiction (for smoking cessation)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Post-Traumatic Stress Disorder (PTSD)",
-      "Schizophrenia (negative symptoms)",
-      "Schizophrenia (auditory hallucinations)"
+      "A) WHO Rehabilitation Guidelines",
+      "B) AHA/ASA Stroke Guidelines",
+      "C) Canadian Stroke Best Practice Recommendations",
+      "D) NICE Guidelines",
     ],
-    correct: [0, 1, 2],
-    multiSelect: false
+    correct: [2],
+    //multiSelect: false
   },
   {
-    question: "US FDA ได้อนุมัติให้ TMS สามารถใช้ในการรักษา  Major Depressive Disorder (MDD) <b>ครั้งแรก</b> ในปีใด?",
-    choices: ["2018", "2008", "2010", "2020"],
-    correct: [1]
-  },
-  {
-    question: "rTMS หรือ repetitive TMS Protocol ที่ US FDA อนุมัติให้รักษา Major Depressive Disorder (MDD) จะต้องวางหัวคอยด์ Figure of 8 กระตุ้นที่ศรีษะบริเวณไหน?",
+    question: "ข้อ 2  รูปแบบการกระตุ้น rTMS แบบใดที่มีหลักฐานดีที่สุดในการลด interhemispheric inhibition เพื่อฟื้นฟูแขน ในผู้ป่วย Post Stroke?",
     choices: [
-      "Right DLPFC",
-      "Left M1 area",
-      "Left temporoparietal lobe",
-      "Left DLPFC"
+              "A) ใช้ความถี่ 1 Hz บริเวณ ipsilesional M1", 
+              "B) ใช้ความถี่ 5–20 Hz บริเวณ contralesional M1",
+              "C) ใช้ความถี่ 1 Hz บริเวณ contralesional M1",
+              "D) ไม่มีข้อใดถูก"
+    ],
+    correct: [2]
+  },
+  {
+    question: "ข้อ 3 ในโรคกลุ่ม Neurology (ที่ไม่ใช่โรคทางจิตเวช)  rTMS ได้รับ US FDA อนุมัติสำหรับข้อบ่งใช้อะไร?",
+    choices: [
+      "A) Major Depressive Disorder",
+      "B) Post stroke with Depression",
+      "C) Motor recovery ในผู้ป่วย Post stroke",
+      "D) Relieve pain caused by migraine headache with aura"
     ],
     correct: [3]
   },
   {
-    question: "rTMS หรือ repetitive TMS Protocol ที่ US FDA อนุมัติให้รักษา Major Depressive Disorder (MDD) จะต้องใช้หัวคอยด์ชนิดไหน ในการกระตุ้นที่ศรีษะบริเวณ Left dorsolateral prefrontal cortex (DLPFC)?",
+    question: "ข้อ 4 จุดเด่นใดของเครื่อง  Yiruide TMS ที่สำคัญมากที่สุดต่อการรักษาและฟื้นฟูผู้ป่วย Post Stroke Rehabilitation?",
     choices: [
-      "Figure of 8 coil",
-      "Circular coil",
-      "H-coil",
-      "Double cone coil"
+      "A) มี Prococol อ้างอิงทั้งจาก USFDA และ IFCN (European expert)",
+      "B) ลักษณะการออกแบบเป็น One piece unit",
+      "C) มีโหมด ทั้ง rTMS, ITBS, cTBS และ ppTMS ครบ สำหรับ Post stroke rehabilitation",
+      "D) มีระบบ internal liquid cooling system ให้ในทุกหัวคอยด์"
     ],
-    correct: [0]
+    correct: [2]
   },
   {
-    question: "เพราะเหตุใดในเครื่อง TMS ต้องมีระบบ Cooling system ที่ดีทั้งในตัวเครื่อง (body) และที่หัวคอยด์?",
+    question: "ข้อ 5 อะไรคือเหตุผลที่ถูกต้องที่สุดที่คลินิกฟื้นฟู stroke นิยมใช้ TMS ควบคู่กายภาพบำบัด (PT/OT)?",
     choices: [
-      "Patient Safety",
-      "Continue using during the service period",
-      "Protecting Coil overheating",
-      "Better design for a friendly user (light and thin)"
+      "A) ทำให้คนไข้มีความร่วมมือในการรักษาและฟื้นฟูมากขึ้น",
+      "B) เพิ่ม neuroplasticity ก่อนทำ PT/OT และเพิ่มผลลัพธ์ของ motor training",
+      "C) เป็นเทคโนโลยีที่ทันสมัย",
+      "D) มีงานวิจัยสนับสนุนมากมาย"
     ],
-    correct: [0, 1, 2, 3],
-    multiSelect: true
+    correct: [1],
+    //multiSelect: true
   }
 ];
 
@@ -80,32 +82,55 @@ function showQuestion() {
   const questionContainer = document.getElementById("question");
   questionContainer.innerHTML = `<p>${q.question}</p>`;
   if (current === 0) {
-    const img = document.createElement("img");
-    img.src = "images/Q1_picture.jpg";
-    img.className = "question-image small-image";
-    questionContainer.appendChild(img);
+  const imgContainer = document.createElement("div");
+  imgContainer.className = "image-row";
+
+  const img1 = document.createElement("img");
+  img1.src = "images/PictureV2_1.png";
+  img1.className = "question-image side-image enlarged-image";
+
+  const img2 = document.createElement("img");
+  img2.src = "images/Q2_picture.jpg";
+  img2.className = "question-image side-image enlarged-image";
+
+  imgContainer.appendChild(img1);
+  imgContainer.appendChild(img2);
+
+  questionContainer.appendChild(imgContainer);
+
   }
    if (current === 1) {
     const img = document.createElement("img");
-    img.src = "images/Q2_picture.jpg";
+    img.src = "images/magtd.png";
     img.className = "question-image small-image";
     questionContainer.appendChild(img);
   } 
   if (current === 2) {
     const img = document.createElement("img");
-    img.src = "images/Q3_picture.png";
+    img.src = "images/PictureV2_Q3.png";
     img.className = "question-image";
     questionContainer.appendChild(img);
   }
   if (current === 3) {
-    const img = document.createElement("img");
-    img.src = "images/Q4_picture.png";
-    img.className = "question-image small-image"; 
-    questionContainer.appendChild(img);
+  const imgContainer = document.createElement("div");
+  imgContainer.className = "image-row";
+
+  const img1 = document.createElement("img");
+  img1.src = "images/Q5_picture.jpg";
+  img1.className = "question-image side-image enlarged-image";
+
+  const img2 = document.createElement("img");
+  img2.src = "images/magtd.png";
+  img2.className = "question-image side-image enlarged-image";
+
+  imgContainer.appendChild(img1);
+  imgContainer.appendChild(img2);
+
+  questionContainer.appendChild(imgContainer);
   }
   if (current === 4) {
     const img = document.createElement("img");
-    img.src = "images/Q5_picture.jpg";
+    img.src = "images/Q5_V2_picture.jpg";
     img.className = "question-image"; 
     questionContainer.appendChild(img);
   }
@@ -254,5 +279,6 @@ function exportToExcel(name, hospital, specialty, tmsExp, answers) {
     document.body.removeChild(a);
   }, 1500);
 }
+
 
 
