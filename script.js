@@ -1,6 +1,6 @@
 const questions = [
   {
-    question: "ข้อ 1 Guidelines ใดสนับสนุนการใช้ rTMS เพื่อช่วยฟื้นฟู motor recovery หลังโรคหลอดเลือดสมอง?",
+    question: "ข้อ 1 Guidelines ใดสนับสนุนการใช้ rTMS เพื่อช่วยฟื้นฟู motor recovery ในผู้ป่วย Post Stroke?",
     choices: [
       "A) WHO Rehabilitation Guidelines",
       "B) AHA/ASA Stroke Guidelines",
@@ -35,7 +35,7 @@ const questions = [
     choices: [
       "A) มี Prococol อ้างอิงทั้งจาก USFDA และ IFCN (European expert)",
       "B) ลักษณะการออกแบบเป็น One piece unit",
-      "C) มีโหมด ทั้ง rTMS, ITBS, cTBS และ ppTMS ครบ สำหรับ Post stroke rehabilitation",
+      "C) มีโหมด ทั้ง rTMS, iTBS, cTBS และ ppTMS ครบ สำหรับ Post stroke rehabilitation",
       "D) มีระบบ internal liquid cooling system ให้ในทุกหัวคอยด์"
     ],
     correct: [2]
@@ -279,6 +279,7 @@ function exportToExcel(name, hospital, specialty, tmsExp, answers) {
     document.body.removeChild(a);
   }, 1500);
 }
+
 
 
 
