@@ -184,6 +184,34 @@ button:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap; /* รองรับ responsive */
+}
+.side-image {
+  width: 45%;                /* ให้ภาพมีขนาดเท่ากัน */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  object-fit: contain;
+}
+
+
+.enlarged-image {
+  width: 60%; /* จากเดิม 50% → เพิ่มขึ้น ~20% */
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  object-fit: contain;
+}
+
+}
+
 
 audio {
   display: none;
